@@ -90,7 +90,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12">
-						<p>Copyright© Sekolah Quran Al-Ihsan, All rights Reserved, 2019. Created with ♥ by <a href="https://github.com/DevCharity">DevCharity</a></p>
+						<p>Copyright © Sekolah Quran Al-Ihsan, All rights Reserved, 2019. Created with <span style="color:#009047">♥</span> by <a href="https://github.com/DevCharity">DevCharity</a></p>
 					</div>
 				</div>
 			</div>
