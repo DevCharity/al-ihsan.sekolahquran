@@ -49,7 +49,7 @@
 							<ul class="justify-content-center">
 								<li><a href=".">Beranda</a></li>
 								<li><a href="profil">Profil</a></li>
-								<li class="cr-dropdown"><a href="#">Informasi</a>
+								<li class="cr-dropdown"><a href="informasi/pendaftaran">Informasi</a>
 									<ul class="cr-dropdown-menu">
 										<li><a href="informasi/pendaftaran">Pendaftaran</a></li>
 										<li><a href="informasi/rincian-biaya">Rincian Biaya</a></li>
