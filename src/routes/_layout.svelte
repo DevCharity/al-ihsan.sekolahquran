@@ -28,7 +28,7 @@
 										<img src="images/logo/logo-dark.png" alt="footer logo">
 									</a>
 								</div>
-								<p>Islam is the know how to pursue pleasure rationally encounter consequences</p>
+								<p>Pendidikan setingkat SD yang berfokus pada Al Qur’an dan Agama Islam</p>
 								<div class="social-icons social-icons--rounded">
 									<ul>
 										<li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
@@ -71,7 +71,7 @@
 
 								<!-- Single Widget -->
 								<div class="single-widget widget--newsletter">
-									<h4 class="widget-title">Update Info Terbaru</h4>
+									<h4 class="widget-title">Info Terbaru</h4>
 									<form action="#">
 										<input type="text" placeholder="Masukan email Anda">
 										<button type="submit"><i class="fa fa-paper-plane-o"></i></button>
