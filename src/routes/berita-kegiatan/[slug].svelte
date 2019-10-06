@@ -17,7 +17,7 @@
 	export let post;
 </script>
 
-<div class="event-details-area ptb--150 bg--white">
+<section class="cr-section about-area ptb--150 bg--white flower--left-top flower--right-bottom">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-xl-9">
@@ -114,4 +114,4 @@
 
 		</div>
 	</div>
-</div><!-- //Event Details Area -->
+</section><!-- //Event Details Area -->
