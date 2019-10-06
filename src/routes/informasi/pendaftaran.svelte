@@ -11,9 +11,9 @@
 						<li>Membayar Uang Formulir Pendaftaran Rp. 100.000</li>
 						<li>Mengisi Biodata siswa/i dan orang tua</li>
 						<li>Menyerahkan pas photo terbaru 3x4 (3 lembar)</li>
-						<li>Menyerahkan Foto copy Akta kelahira  (2 lembar)</li>
+						<li>Menyerahkan Foto copy Akta kelahiran (2 lembar)</li>
 						<li>Menyerahkan Foto copy Kartu Keluarga (2 lembar)</li>
-						<li>Menyerahkan Foto copy KTP orang tua ( 1 lembar)</li>
+						<li>Menyerahkan Foto copy KTP orang tua (1 lembar)</li>
 						<li>Menyerahkan APE (alat permainan educatif)</li>
 					</ul>
 					<div class="about-content__bottom d-flex align-items-center flex-wrap flex-sm-nowrap">

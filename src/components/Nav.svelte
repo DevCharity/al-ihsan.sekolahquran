@@ -26,13 +26,13 @@
 					<div class="header__right">
 						<div class="header__right__top d-flex justify-content-end align-items-center flex-wrap flex-sm-nowrap">
 							<ul class="header__right__times d-flex justify-content-end" >
-								<li><p><i class="icofont icofont-full-sunny"></i>SUNRISE : [04:30]</p></li>
-								<li><p><i class="icofont icofont-full-night"></i>SUNSET : [17:51]</p></li>
+								<li><p><i class="icofont icofont-full-sunny"></i>SUBUH : 04:30</p></li>
+								<li><p><i class="icofont icofont-full-night"></i>MAGRIB : 17:51</p></li>
 							</ul>
-							<ul class="header__right__icons d-flex justify-content-end">
+							<!-- <ul class="header__right__icons d-flex justify-content-end">
 								<li class="minicart-trigger"><a href="#"><i class="fa fa-opencart"></i><span class="cart-counter">2</span></a></li>
 								<li class="accountbox-trigger"><a href="#"><i class="fa fa-user-o"></i></a></li>
-							</ul>
+							</ul> -->
 						</div>
 					</div>
 				</div>
