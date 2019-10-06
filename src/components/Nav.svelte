@@ -55,12 +55,12 @@
 										<li><a href="informasi/rincian-biaya">Rincian Biaya</a></li>
 										<li><a href="informasi/kurikulum">Kurikulum</a></li>
 										<li><a href="informasi/jadwal-sekolah">Jadwal Sekolah</a></li>
-										<li><a href="informasi/berita-kegiatan">Berita Kegiatan</a></li>
 										<li><a href="informasi/galeri">Galeri</a></li>
 										<li><a href="informasi/afiliasi">Afiliasi</a></li>
 										<li><a href="informasi/infaq">Infaq</a></li>
 									</ul>
 								</li>
+								<li><a href="berita-kegiatan">Berita Kegiatan</a></li>
 								<li><a href="kontak-kami">Kontak Kami</a></li>
 							</ul>
 						</nav><!-- //Main naviagtion -->
