@@ -1,0 +1,204 @@
+@import "../variables";
+@import "../mixins";
+/*======= About Styles =======*/
+
+.about-content{
+	padding-right: 30px;
+	h3{
+		font-size: 28px;
+		margin-bottom: 0;
+		font-weight: 400;
+		font-family: $heading-font-italic;
+		strong{
+			font-family: $heading-font-bolditalic;
+		}
+	}
+	h2{
+		font-family: $heading-font-bolditalic;
+		font-weight: 700;
+	}
+}
+.about-content__bottom{
+	margin-top: 35px;
+	& > span{
+		padding: 0 40px;
+		font-family: $body-font;
+		font-size: 20px;
+		color: #606060;
+	}
+}
+.about-content__bottom__left{
+	p{
+		margin-bottom: 0;
+		font-size: 16px;
+	}
+	h3{
+		font-family: $body-font;
+		font-style: normal;
+		font-weight: 700;
+		a{
+			color: $heading-color;
+			&:hover{
+				color: $theme-color;
+			}
+		}
+	}
+}
+.about-images{
+	margin-top: -16px;
+	margin-left: -17px;
+	img{
+		float: left;
+		margin-top: 16px;
+		margin-left: 17px;
+	}
+}
+
+
+@media #{$lg-layout}{
+	.about-images{
+		img{
+			width: 46%;
+		}
+	}
+}
+
+
+@media #{$md-layout}{
+	.about-images{
+		margin-top: 50px;
+	}
+}
+
+@media #{$sm-layout}{
+	.about-images{
+		margin-top: 30px;
+	}
+	.about-content{
+		h3{
+			font-size: 22px;
+			line-height: 28px;
+		}
+		h2{
+			font-size: 30px;
+			line-height: 36px;
+		}
+	}
+}
+
+@media #{$xs-layout}{
+	.about-images{
+		img{
+			width: 100%;
+		}
+	}
+	.about-content__bottom__right{
+		margin-top: 20px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* About Details */
+.about-details{
+
+}
+.about-details__thumb{
+	a{
+		position: relative;
+		display: inline-block;
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(0,0,0,0.5);
+			opacity: 0;
+			visibility: hidden;
+			@include transition(all 0.4s ease-in-out 0s);
+			z-index: 1;
+		}
+		&:after{
+			content: "\ed52";
+			font-family: "IcoFont";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: 20px;
+			color: #fff;
+			font-size: 26px;
+			visibility: hidden;
+			opacity: 0;
+			z-index: 2;
+			@include transform(translate(-50%, -50%));
+			@include transition(all 0.4s ease-in-out 0s);
+		}
+		img{
+			width: 100%;
+		}
+		&:hover{
+			&:before{
+				visibility: visible;
+				opacity: 1;
+			}
+			&:after{
+				margin-top: 0;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}
+.about-details__content{
+	margin-top: -30px;
+	.single-block{
+		padding: 0 20px;
+		margin-top: 30px;
+		h4{
+			font-size: 24px;
+			font-weight: 700;
+			font-style: italic;
+			font-family: $heading-font-bolditalic;
+		}
+		p{
+			font-size: 14px;
+			color: #747474;
+			line-height: 22px;
+		}	
+	}
+}
+
+
+@media #{$lg-layout}{
+	.about-details__content{
+		.single-block{
+			padding: 0;
+		}
+	}
+}
+@media #{$md-layout}{
+	.about-details__content{
+		margin-top: 20px;
+		.single-block{
+			padding: 0;
+		}
+	}
+}
+
+@media #{$sm-layout}{
+	.about-details__content{
+		margin-top: 20px;
+		.single-block{
+			padding: 0;
+		}
+	}
+}

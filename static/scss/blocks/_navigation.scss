@@ -1,0 +1,185 @@
+@import "../variables";
+@import "../mixins";
+/*======= Navigation Styles =======*/
+
+/* Heder Style 1 Nagivagion */
+.header{
+	nav.menu{
+		display: block;
+		width: 100%;
+		ul{
+			@include flexbox();
+			list-style: none;
+			padding-left: 0;
+			li{
+				padding: 0 25px;
+				display: inline-block;
+				position: relative;
+				&:first-child{
+					padding-left: 0;
+				}
+				&:last-child{
+					padding-right: 0;
+				}
+				a{
+					font-size: 16px;
+					display: inline-block;
+					line-height: 1;
+					letter-spacing: 0.5px;
+					color: #ffffff;
+					padding: 25px 0;
+					font-family: $body-font;
+					font-weight: 600;
+					position: relative;
+					text-transform: uppercase;
+				}		
+				&:hover{
+					a{
+						color: $theme-color;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$xlg-layout}{
+		nav.menu{
+			ul{
+				li{
+					a{
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$lg-layout}{
+		nav.menu{
+			ul{
+				li{
+					padding: 0 16px;
+					a{
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/* Header Style 2 navigation */
+.header.header--style-2{
+	nav.menu{
+		ul{
+			li{
+				a{
+					padding: 25px 0;
+					color: #fff;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/* Dropdown Style */
+.header{
+	nav.menu{
+		ul{
+			& > li.cr-dropdown{
+				& > a{
+					&:after{
+						content: "\eb89";
+						font-family: 'IcoFont';
+					    font-size: 14px;
+					    padding-left: 5px;
+					}
+				}
+				li.cr-sub--dropdown{
+					& > a{
+						&:after{
+							content: "\f105";
+							float: right;
+						}
+					}
+				}
+			}
+			
+			li{
+				// Dropdown Styles
+				ul.cr-dropdown-menu{
+					position: absolute;
+					width: 265px;
+					background: #fafafa;
+					height: auto;
+					left: 0;
+					top: 100%;
+					@include flex-wrap(wrap);
+					padding:20px 0;
+					@include box-shadow(0 3px 15px rgba(0,0,0,0.2));
+					@include transition(all 0.3s ease-in-out 0s);
+					@include transform(translateY(30px));
+					opacity: 0;
+					visibility: hidden;
+					z-index: 99;
+					li{
+						width: 100%;
+						padding: 0 30px;
+						display: block;
+						position: relative;
+						a{
+							display: block;
+							padding: 9px 0;
+							font-size: 14px;
+						    color: #303030;
+						    font-weight: 500;
+						    position: relative;
+						    &:before{
+						    	content: "";
+						    	left: 0;
+								top: 50%;
+								height: 2px;
+								width: 0;
+								background: $theme-color;
+								position: absolute;
+								margin-top: -3px;;
+								@include transition(all 0.3s ease-in-out 0s);
+						    }
+						}
+						&:hover{
+							& > a{
+								color: $theme-color;
+								padding-left: 15px;
+								&:before{
+									width: 10px;
+									@include transform(scaleX(1));
+								}
+							}
+						}
+
+						ul.cr-sub--dropdown-menu{
+							left: 100%;
+							top: 0;
+							z-index: 99;
+						}
+					}
+				}
+
+				&:hover{
+					& > ul.cr-dropdown-menu{
+						opacity: 1;
+						visibility: visible;
+						@include transform(translateY(0));
+					}
+				}
+			}
+		}
+	}
+}

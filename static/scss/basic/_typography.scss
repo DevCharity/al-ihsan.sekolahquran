@@ -1,0 +1,162 @@
+@import "../variables";
+@import "../mixins";
+/*======= Typography =======*/
+body{
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $body-font;
+  color: $body-color;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+input::placeholder, textarea::placeholder{
+   color: #8e8e8e;
+}
+button{
+  border: none;
+  &:hover, &:focus, &:active{
+    outline: none;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+img{
+  max-width: 100%;
+}
+a{
+  @include transition(all 0.3s ease-in-out 0s);
+  &:focus, &:active, &:visited{
+    outline: none;
+  }
+}
+input[type="radio"]{
+  visibility: hidden;
+  display: none;
+}
+input[type="radio"] + label{
+  padding-left: 25px;
+  position: relative;
+  color: #a4a4a4;
+  &:before{
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #ebebeb;
+    border-radius: 100%;
+    left: 0;
+    top: 3px;
+    @include transition(all 0.3s ease-in-out 0s);
+  }
+}
+input[type="radio"]:checked + label{
+  &:before{
+    border-color: #606060;
+    border-width: 5px;
+  }
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  font-family: $heading-font-bolditalic;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: $heading-color;
+  @media #{$sm-layout}{
+    font-size: 87.5%;
+  }
+}
+h1,
+.h1 {
+  font-size: 42px;
+  line-height: 58px;
+}
+h2,
+.h2 {
+  font-size: 36px;
+  line-height: 46px;
+}
+h3,
+.h3 {
+  font-size: 28px;
+  line-height: 36px;
+}
+h4,
+.h4 {
+  font-size: 20px;
+  line-height: 24px;
+}
+h5,
+.h5 {
+  font-size: 17px;
+  line-height: 24px;
+}
+h6,
+.h6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+p,
+pre,
+table,
+blockquote {
+  margin-bottom: 15px;
+}
+ul{
+  list-style: inside;
+  list-style-type: square;
+  padding-left: 40px;
+}
+ul.reset{
+  list-style: none;
+  padding-left: 0;
+}
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding-left: 40px
+}
+blockquote {
+  font-size: 17px;
+  line-height: 30px;
+  color: #747474;
+  font-weight: 400;
+  font-style: italic;
+  font-family: $body-font;
+  padding: 30px 20px;
+  &:before{
+    content: "\"";
+    font-size: 48px;
+    color: #000;
+    font-family: $body-font;
+    font-style: italic;
+  }
+}
+strong {
+  font-weight: 700;
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+input:not([type="radio"]), select{
+  height: 50px;
+  width: 100%;
+  padding: 0 30px;
+  @include transition(all 0.3s ease-in-out 0s);
+  &:focus, &:active{
+    outline: none;
+  }
+}
+
+select{
+  &:focus, &:active{
+    outline: none;
+  }
+}

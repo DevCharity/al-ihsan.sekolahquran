@@ -1,0 +1,233 @@
+@import "../variables";
+@import "../mixins";
+/*======= Accountbox Styles =======*/
+
+.wrapper{
+	position: relative;
+}
+
+.accountbox-wrapper{
+	z-index: -9991;
+	@include flexbox;
+	@include flex-wrap(wrap);
+	position: fixed;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	@include transition(all 0.5s ease-in-out 0s);
+	visibility: hidden;
+	&.is-visible{
+		visibility: visible;
+		opacity: 1;
+		z-index: 9991;
+	}
+
+	.body-overlay{
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: -21;
+		height: 100%;
+		width: 100%;
+		background: #15181C;
+		opacity: 0;
+		@include transition(all 0.5s ease-in-out 0s);
+		cursor: url(images/icons/cross-icon.png), crosshair;
+	}
+
+	&.is-visible{
+		.accountbox{
+			@include transform(translate(-50%, -50%));
+			opacity: 1;
+			visibility: visible;
+		}
+		.body-overlay{
+			opacity: 0.85;
+			visibility: visible;
+			z-index: 21;
+		}
+
+	}
+
+}
+
+.accountbox__filters{
+	padding-bottom: 7px;
+	li{
+		padding: 0 10px ;
+		margin-bottom: 0;
+		position: relative;
+		&:first-child{
+			padding-left: 0;
+		}
+		&:last-child{
+			padding-right: 0;
+			&:before{
+				display: none;
+			}
+		}
+		&:before{
+			content: "";
+			height: 3px;
+			width: 10px;
+			background: #cdcdcd;
+			position: absolute;
+			right: 0;
+			margin-right: -5px;
+			top: 50%;
+		}
+		a{
+			font-size: 24px;
+			font-weight: 700;
+			font-family: $heading-font-bolditalic;
+			color: #cdcdcd;
+			font-style: italic;
+			&.active{
+				color: #303030;
+			}
+		}
+	}
+}
+
+.accountbox{
+	background: #e3e3e3;
+	position: absolute;
+	z-index: 23;
+	left: 50%;
+	top: 50%;
+	width: 460px;
+	opacity: 0;
+	visibility: hidden;
+	padding: 70px;
+	padding-right: 120px;
+	@include transform(translate(-50%, -120%));
+	@include transition(transform 0.5s cubic-bezier(0.38, 0.7, 0.66, 0.82) 0.3s);
+
+	.single-input{
+		margin-top: 25px;
+		input{
+			height: 40px;
+			line-height: 42px;
+			border: 1px solid #aaaaaa;
+			background: transparent;
+			font-size: 14px;
+			font-weight: 400;
+			color: #afacac;
+			&:focus{
+				border-color: $theme-color;
+			}
+			&::placeholder{
+				color: #afacac;
+			}
+			&::-moz-placeholder{
+				color: #afacac;
+			}
+		}
+		button{
+			padding: 0 35px;
+		}
+	}
+}
+
+
+.accountbox-login__others{
+	margin-top: 50px;
+	h6{
+		font-family: $heading-font-italic;
+		color: #898989;
+		font-size: 14px;
+		margin-bottom: 25px;
+	}
+}
+
+
+.accountbox-close-button{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background: transparent;
+	text-align: center;
+	line-height: 40px;
+	font-size: 25px;
+	color: #333333;
+	position: absolute;
+	right: 4px;
+	top: 6px;
+	cursor: pointer;
+	@include transition(all 0.3s ease-in-out 0s);
+	&:hover{
+		opacity: 0.9;
+		color: $theme-color;
+	}
+}
+
+
+
+@media #{$md-layout}{
+	.accountbox-wrapper{
+		overflow-x: hidden;
+		overflow-y: scroll;
+		.accountbox{
+			top: 50px;
+			.accountbox-close-button{
+				left: auto;
+				right: 0;
+			}
+		}
+		&.is-visible{
+			.accountbox{
+				@include transform(translate(-50%, 0));
+			}
+		}
+	}
+}
+
+
+@media #{$sm-layout}{
+	.accountbox-wrapper{
+		overflow-x: hidden;
+		overflow-y: scroll;
+		.accountbox{
+			top: 50px;
+			width: calc(100% - 60px);
+			@include transform(translate(-50%, -120%));
+		    left: 50%;
+			&.is-visible{
+				@include transform(translate(0, 0));
+			}
+		}
+
+		&.is-visible{
+			.accountbox{
+				@include transform(translate(-50%, 0));
+			}
+		}
+	}
+}
+
+@media #{$xs-layout}{
+	.accountbox-wrapper{
+		overflow-x: hidden;
+		overflow-y: scroll;
+		.accountbox{
+		    padding: 45px 30px;
+		    padding-right: 30px;
+			top: 50px;
+			width: calc(100% - 60px);
+			@include transform(translate(-50%, -120%));
+		    left: 50%;
+			&.is-visible{
+				@include transform(translate(0, 0));
+			}
+		}
+
+		&.is-visible{
+			.accountbox{
+				@include transform(translate(-50%, 0));
+			}
+		}
+	}
+}

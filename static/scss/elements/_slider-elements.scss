@@ -1,0 +1,245 @@
+@import "../variables";
+@import "../mixins";
+/*======= Slider Element Styles =======*/
+
+/* Slider Dots Style 1 */
+.slider-dots--style1{
+	position: relative;
+	margin-bottom: 0 !important;
+	ul.slick-dots{
+		position: absolute;
+	    left: -118px;
+	    bottom: -30px;
+	    text-align: left;
+	    display: inline-block;
+	    @include transform(rotate(-90deg) translateX(50%));
+	    z-index: 5;
+	    width: auto;
+	    counter-reset: li;
+	    li{
+		    height: auto;
+	    	width: auto;
+	    	margin: 10px 8px !important;
+	    	font-family: $heading-font-italic;
+	    	font-weight: 400;
+	    	font-style: italic;
+	    	font-size: 16px;
+	    	@include transition(all 0.3s ease-in-out 0s);
+	    	&:first-child{
+	    		margin-left: 0;
+	    	}
+	    	&:last-child{
+	    		margin-right: 0;
+	    	}
+	    	button{
+	    		display: none;
+	    	}
+	    	&:before{
+	    		content: "";
+	    		height: 1px;
+	    		width: 0;
+	    		position: absolute;
+	    		left: 0;
+	    		top: 45%;
+	    		background: #434343;
+	    		@include transition(all 0.3s ease-in-out 0s);
+	    	}
+	    	&:after{
+				counter-increment: li;
+				content: "0" counter(li)
+	    	}
+
+	    	&.slick-active{
+	    		color: #434343;
+	    		&:before{
+	    			width: 100%;
+	    		}
+	    	}
+	    }
+	}
+}
+
+
+/* Slider Arrow Style 1 */
+.slider-arrow--style1{
+	position: relative;
+	.slick-arrow{
+		position: absolute;
+		top: 50%;
+		font-size: 26px;
+		z-index: 1;
+		line-height: 1;
+		border-radius: 100%;
+		height: 60px;
+		width: 60px;
+		display: inline-block;
+		padding: 17px 0;
+		background: rgba(255,255,255,0.3);
+		color: #fff;
+		margin-top: -30px;
+		@include transition(all 0.3s ease-in-out 0s);
+		&:hover{
+			background: $theme-color;
+		}	
+		&.arrow-prev{
+			left: 80px;
+			@include transform(translateX(-50px));
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&.arrow-next{
+			@include transform(translateX(50px));
+			right: 80px;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&:hover{
+		.slick-arrow{
+			&.arrow-prev{
+				@include transform(translateX(0));
+				visibility: visible;
+				opacity: 1;
+			}
+			&.arrow-next{
+				@include transform(translateX(0));
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+
+	&.arrow--dark{
+		.slick-arrow{
+			background: rgba(0,0,0,0.2);
+			&:hover{
+				background: $theme-color;
+			}
+		}
+	}
+}
+
+
+
+@media #{$lg-layout}{
+	.slider-arrow--style1{
+		.slick-arrow{
+		    font-size: 22px;
+		    height: 45px;
+		    width: 45px;
+		    margin-top: -22px;
+		    padding: 12px 0;
+			&.arrow-prev{
+				left: 15px;
+			}
+			&.arrow-next{
+				right: 15px;
+			}
+		}
+	}
+}
+
+
+@media #{$md-layout}{
+	.slider-arrow--style1{
+		.slick-arrow{
+		    font-size: 22px;
+		    height: 45px;
+		    width: 45px;
+		    margin-top: -22px;
+		    padding: 12px 0;
+		    top: auto;
+		    bottom: 30px;
+			&.arrow-prev{
+				left: auto;
+				right: calc(50% + 10px);
+			}
+			&.arrow-next{
+				right: auto;
+				left: calc(50% + 10px);
+			}
+		}
+	}
+}
+
+
+@media #{$sm-layout}{
+	.slider-arrow--style1{
+		.slick-arrow{
+		    font-size: 18px;
+		    height: 38px;
+		    width: 38px;
+		    margin-top: -19px;
+		    padding: 10px 0;
+		    top: auto;
+		    bottom: 30px;
+			&.arrow-prev{
+				left: auto;
+				right: calc(50% + 10px);
+			}
+			&.arrow-next{
+				right: auto;
+				left: calc(50% + 10px);
+			}
+		}
+	}
+}
+
+
+
+/* Slider Arrow Style 2 */
+.slider-arrow--style2{
+	position: relative;
+	.slick-arrow{
+		position: absolute;
+		top: 50%;
+		font-size: 16px;
+		z-index: 1;
+		line-height: 1;
+		border-radius: 100%;
+		height: 50px;
+		width: 50px;
+		display: inline-block;
+		background: #ffffff;
+		color: #fff;
+		margin-top: -25px;
+		padding: 3px;
+		@include transition(all 0.3s ease-in-out 0s);
+		span{
+			height: 100%;
+			width: 100%;
+			padding: 14px 0;
+			background: $theme-color;
+			color: #fff;
+			display: inline-block;
+			border-radius: 100%;
+		}	
+		&.arrow-prev{
+			left: -10px;
+		}
+
+		&.arrow-next{
+			right: -10px;
+		}
+	}
+}
+
+@media #{$sm-layout}{
+	.slider-arrow--style2{
+		.slick-arrow{
+			top: 100%;
+			margin-top: 0;
+			&.arrow-prev{
+				left: auto;
+				right: calc(50% + 10px);
+			}
+			&.arrow-next{
+				right: auto;
+				left: calc(50% + 10px);
+			}
+		}
+	}
+}

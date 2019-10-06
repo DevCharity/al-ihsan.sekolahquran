@@ -1,0 +1,261 @@
+@import "../variables";
+@import "../mixins";
+/*======= Islams Pillar =======*/
+
+.islams-pillars{
+	padding: 0 150px;
+	@media #{$xx-layout}{
+		padding: 0 30px;
+	}
+}
+.islams-pillars__thumb{
+	@include flex(0 0 20%);
+}
+.islams-pillars__content{
+	padding-left: 35px;
+	padding-right: 93px;
+	h3{
+		font-size: 26px;
+		font-weight: 400;
+		font-family: $heading-font-italic;
+		color: #303030;
+		margin-bottom: 0;
+	}
+	h2{
+		font-size: 36px;
+		line-height: 40px;
+		font-family: $heading-font-bolditalic;
+		font-weight: 700;
+	}
+	p{
+		padding-top: 5px;
+		margin-bottom: 0;
+		span{
+			font-weight: 500;
+		}
+	}
+	a.cr-btn{
+		margin-top: 32px;
+	}
+}
+.islams-pillars--style-2{
+	.islams-pillars__content{
+		padding-left: 0;
+	}
+}
+
+.pillars{
+	@include flex(0 0 56%);
+}
+.pillar__single{
+	height: 280px;
+	width: 155px;
+	background: url(images/pillars/pillar-bg.png) no-repeat scroll center center;
+	background-size: cover;
+	@include flexbox();
+	@include justify-content(center);
+	@include align-items(flex-end);
+	text-align: center;
+	margin: 0 10px;
+	&:first-child{
+		margin-left: 0;
+	}
+	&:last-child{
+		margin-right: 0;
+	}
+	.pillar__single__inner{
+		padding-bottom: 35%;
+	}
+	h3{
+		font-size: 21px;
+		color: #606060;
+		font-family: $body-font;
+		font-weight: 700;
+		font-style: normal;
+		margin-bottom: 0;
+		margin-top: 14px;
+		@include transition(all 0.3s ease-in-out 0s);
+	}
+}
+
+@media #{$xlg-layout}{
+	.islams-pillars{
+		padding: 0 30px;
+	}
+	.islams-pillars__content{
+		padding-left: 30px;
+		padding-right: 30px;
+		h2{
+			font-size: 30px;
+		}
+	}
+	.pillar__single{
+	    height: 190px;
+    	width: 110px;
+	}
+}
+
+
+
+@media #{$lg-layout}{
+	.islams-pillars{
+		padding: 0 30px;
+	}
+	.islams-pillars__thumb{
+		@include flex(0 0 50%);
+	}
+	.islams-pillars__content{
+		@include flex(0 0 50%);
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.pillars{
+		margin-top: 50px;
+		@include flex(0 0 90%);
+	}
+	.pillar__single{
+	    height: 265px;
+    	width: 150px;
+	}
+	.islams-pillars--style-2{
+		.islams-pillars__content{
+			@include flex(0 0 80%);
+			padding-left: 30px;
+			padding-right: 30px;
+			text-align: center !important;
+		}
+	}
+}
+
+
+
+@media #{$md-layout}{
+	.islams-pillars{
+		padding: 0 30px;
+	}
+	.islams-pillars__thumb{
+		@include flex(0 0 40%);
+	}
+	.islams-pillars__content{
+		@include flex(0 0 60%);
+		padding-left: 30px;
+		padding-right: 0;
+	}
+	.pillars{
+		margin-top: 50px;
+		@include flex(0 0 100%);
+		.pillar__single{
+			margin-top: 30px;
+			height: 225px;
+			width: 125px;
+		}
+	}
+
+	.islams-pillars--style-2{
+		.islams-pillars__content{
+			padding: 0 30px;
+			text-align: center !important;
+			@include flex(0 0 100%);
+		}
+	}
+}
+
+@media #{$sm-layout}{
+	.islams-pillars{
+		padding: 0 15px;
+	}
+	.islams-pillars__thumb{
+		@include flex(0 0 40%);
+	}
+	.islams-pillars__content{
+		@include flex(0 0 60%);
+		padding-left: 30px;
+		padding-right: 0;
+		text-align: center !important;
+		h2{
+			font-size: 25px;
+		}
+	}
+	.pillars{
+		margin-top: 50px;
+		@include flex(0 0 100%);
+		@include flex-wrap(wrap);
+		@include justify-content(center);
+		.pillar__single{
+			margin-top: 30px;
+			&:first-child{
+				margin-left: 10px;
+			}
+			&:last-child{
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+@media #{$sm-layout}{
+	.islams-pillars__thumb{
+		text-align: center;
+		@include flex(0 0 100%);
+	}
+	.islams-pillars__content{
+		@include flex(0 0 100%);
+		margin-top: 20px;
+		padding: 0;
+		text-align: center;
+		h2{
+			font-size: 23px;
+		    line-height: 28px;
+		}
+	}
+}
+
+
+
+
+.boxed--layout{
+	.pillars{
+		@include flex(0 0 58%);
+	}
+	.islams-pillars {
+	    padding: 0 90px;
+	    @media #{$xlg-layout}{
+	    	padding: 0 30px;
+	    	.pillar__single{
+    		    height: 260px;
+			    width: 145px;
+	    	}
+	    }
+	    @media #{$lg-layout}{
+	    	padding: 0 30px;
+	    	.pillar__single{
+	    		height: 250px;
+    		    width: 140px;
+	    	}
+	    }
+	    @media #{$sm-layout}{
+	    	padding: 0 30px;
+	    }
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px){
+	.boxed--layout{
+		.islams-pillars{
+			.pillar__single {
+			    height: 180px;
+			    width: 100px;
+			}
+		}
+	}
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px){
+	.boxed--layout{
+		.islams-pillars{
+			.pillar__single{
+			    height: 215px;
+			    width: 120px;
+			}
+		}
+	}
+}

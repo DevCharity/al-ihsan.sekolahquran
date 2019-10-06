@@ -1,0 +1,253 @@
+@import "../variables";
+@import "../mixins";
+/*======= Banner Styles =======*/
+
+.banner{
+	
+}
+.right-side--bg{
+	background-color: #f3f3f3;
+	background: url(images/bg/banner2-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: cover;
+}
+.banner__single{
+	position: relative;
+}
+.banner__side-photo{
+	position: absolute;
+	bottom: 0;
+	left: 10%;
+	max-width: 35%;
+	margin-left: -50px;
+	visibility: hidden;
+	opacity: 0;
+	@include transition(all 1s ease-in-out 0.8s);
+}
+
+.slick-current, .slick-active{
+	.banner__side-photo{
+		margin-left: 0;
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+
+@media #{$xlg-layout}{
+	.banner__side-photo{
+		left: 2%;
+	}
+}
+
+@media #{$lg-layout}{
+	.banner__side-photo{
+		left: 0;
+	}
+}
+
+
+@media #{$md-layout}{
+	.banner__side-photo{
+		left: 0;
+	}
+	.right-side--bg{
+	    background-position: 69% bottom;
+	}
+}
+
+@media #{$sm-layout}{
+	.banner__side-photo{
+		left: 0;
+		width: 100%;
+		position: relative;
+		max-width: 60%;
+		text-align: center;
+		img{
+			width: auto;
+		}
+	}
+	.right-side--bg{
+	    background-position: 69% bottom;
+	}
+}
+
+@media #{$xs-layout}{
+	.banner__side-photo{
+		left: 0;
+		width: 100%;
+		position: relative;
+		max-width: 80%;
+		text-align: center;
+		img{
+			width: auto;
+		}
+	}
+	.right-side--bg{
+	    background-position: 69% bottom;
+	}
+}
+
+.banner__content{
+	position: relative;
+	z-index: 1;
+	padding: 100px 0;
+	img{
+		margin-bottom: 40px;
+		display: inline-block;
+	}
+	h1{
+		color: #ffffff;
+		line-height: 52px;
+		font:{
+			family: $heading-font-bolditalic;
+			size: 60px;
+			weight: 700;
+		}
+	}
+	h3{
+		color: #ffffff;
+		font:{
+			family: $heading-font-italic;
+			size: 40px;
+			weight: 400;
+		}
+		strong{
+			font:{
+				family: $heading-font-bolditalic;
+				weight: 700;
+				size: 108%;
+			}
+		}
+	}
+	a.cr-btn{
+		margin-top: 27px;
+	}
+
+	&.color--theme{
+		h1{
+			color: $theme-color;
+		}
+		h3{
+			color: $theme-color;
+		}
+	}
+
+	@media #{$lg-layout}{
+		img{
+			margin-bottom: 30px;
+		}
+		h1{
+			font-size: 48px;
+			line-height: 42px;
+		}
+		h3{
+			font-size: 32px;
+			line-height: 36px;
+		}
+	}
+
+	@media #{$md-layout}{
+		img{
+			margin-bottom: 15px;
+		}
+		h1{
+			font-size: 48px;
+			line-height: 42px;
+		}
+		h3{
+			font-size: 32px;
+			line-height: 36px;
+		}
+		a.cr-btn{
+			margin-top: 15px;
+		}
+	}
+
+	@media #{$sm-layout}{
+		padding: 50px 0;
+		img{
+			margin-bottom: 15px;
+		}
+		h1{
+			font-size: 44px;
+			line-height: 42px;
+		}
+		h3{
+			font-size: 32px;
+			line-height: 36px;
+		}
+		a.cr-btn{
+			margin-top: 15px;
+		}
+	}
+
+	@media #{$xs-layout}{
+		img{
+			margin-bottom: 5px;
+			max-width: 70%;
+		}
+		h1{
+			font-size: 28px;
+			line-height: 32px;
+		}
+		h3{
+			font-size: 24px;
+			line-height: 28px;
+		}
+		a.cr-btn{
+			margin-top: 15px;
+		}
+	}
+}
+
+
+
+/* Slider Banner */
+.slide-animate-text{
+	.banner__content{
+		& > *{
+			opacity: 0;
+		}
+	}
+	.slick-current, .slick-active{
+		.banner__content{
+			& > *{
+				-webkit-animation: fadeInUp 0.8s ease-in-out 0.3s both;
+				-moz-animation: fadeInUp 0.8s ease-in-out 0.3s both;
+				-ms-animation: fadeInUp 0.8s ease-in-out 0.3s both;
+				-o-animation: fadeInUp 0.8s ease-in-out 0.3s both;
+				animation: fadeInUp 0.8s ease-in-out 0.3s both;
+			}
+			img{
+				-webkit-animation: fadeInDown 0.8s ease-in-out 0.3s both;
+				-moz-animation: fadeInDown 0.8s ease-in-out 0.3s both;
+				-ms-animation: fadeInDown 0.8s ease-in-out 0.3s both;
+				-o-animation: fadeInDown 0.8s ease-in-out 0.3s both;
+				animation: fadeInDown 0.8s ease-in-out 0.3s both;
+			}
+			h3{
+				-webkit-animation: fadeInLeft 0.8s ease-in-out 0.5s both;
+				-moz-animation: fadeInLeft 0.8s ease-in-out 0.5s both;
+				-ms-animation: fadeInLeft 0.8s ease-in-out 0.5s both;
+				-o-animation: fadeInLeft 0.8s ease-in-out 0.5s both;
+				animation: fadeInLeft 0.8s ease-in-out 0.5s both;
+			}
+			h1{
+				-webkit-animation: fadeInRight 0.8s ease-in-out 0.5s both;
+				-moz-animation: fadeInRight 0.8s ease-in-out 0.5s both;
+				-ms-animation: fadeInRight 0.8s ease-in-out 0.5s both;
+				-o-animation: fadeInRight 0.8s ease-in-out 0.5s both;
+				animation: fadeInRight 0.8s ease-in-out 0.5s both;
+			}
+			.banner__content__button{
+				-webkit-animation: fadeInUp 0.8s ease-in-out 0.7s both;
+				-moz-animation: fadeInUp 0.8s ease-in-out 0.7s both;
+				-ms-animation: fadeInUp 0.8s ease-in-out 0.7s both;
+				-o-animation: fadeInUp 0.8s ease-in-out 0.7s both;
+				animation: fadeInUp 0.8s ease-in-out 0.7s both;
+			}
+		}
+	}
+}

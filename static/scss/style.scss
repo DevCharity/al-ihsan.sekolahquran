@@ -1,0 +1,97 @@
+/*********************************************************************************
+
+	Template Name: Azan - Islamic HTML Template  
+	Template URI: https://themeforest.net/user/hastech
+	Description: Azan is a beautiful and creative islamic  html template
+	Author: HasTech
+	Author URI: https://themeforest.net/user/hastech
+	Version: 1.1
+
+	Note: This is style css.
+
+**********************************************************************************/
+
+/* [[ INDEX ]]
+		
+	Reset
+	Typography
+	Helper Class
+	Section Title Styles
+	Button Styles
+	Social Icons Styles
+	Slider Element Styles
+	Extra Elements Styles
+	Header Styles
+	Navigation Styles
+	Banner Styles
+	About Styles
+	Islams Pillar
+	Event Styles
+	Activity Styles
+	Salat Times
+	Team Styles
+	Small Layouts
+	Blog Styles
+	Accountbox Styles
+	Product Styles
+	Widget Styles
+	CommentBox Styles
+	Event Details Styles
+	Activity Details
+	Donation Page Styles
+	Contact Styles
+	Product Details
+	Cartbox Styles
+	Cart Styles
+	Checkout Styles
+	Blog Details Styles
+	Footer Styles
+
+[[ END INDEX]] */
+
+
+
+// Needed imports
+@import 'variables';
+@import 'mixins';
+
+
+/*Basic styles*/
+@import 'basic/reset';
+@import 'basic/typography';
+@import 'basic/helper-class';
+
+/*Elements*/
+@import 'elements/section-title';
+@import 'elements/button';
+@import 'elements/social-icons';
+@import 'elements/slider-elements';
+@import 'elements/extra-elements';
+
+/*Blocks*/
+@import 'blocks/header';
+@import 'blocks/navigation';
+@import 'blocks/banner';
+@import 'blocks/about';
+@import 'blocks/islams-pillar';
+@import 'blocks/event';
+@import 'blocks/activity';
+@import 'blocks/salat-times';
+@import 'blocks/team';
+@import 'blocks/small-layouts';
+@import 'blocks/blog';
+@import 'blocks/accountbox';
+@import 'blocks/product';
+@import 'blocks/widgets';
+@import 'blocks/commentbox';
+@import 'blocks/event-details';
+@import 'blocks/activity-details';
+@import 'blocks/pg-donation';
+@import 'blocks/contact';
+@import 'blocks/product-details';
+@import 'blocks/cartbox';
+@import 'blocks/cart';
+@import 'blocks/checkout';
+@import 'blocks/blog-details';
+@import 'blocks/footer';
+

@@ -1,0 +1,205 @@
+@import "../variables";
+@import "../mixins";
+/*======= Activity Details =======*/
+
+.activity-details{
+	padding-right: 40px;
+}
+
+.activity-details__title{
+	font-size: 32px;
+	line-height: 1.15;
+	color: #303030;
+	font-style: italic;
+	font-family: $heading-font-bolditalic;
+	font-weight: 700;
+	margin-top: 37px;
+	margin-bottom: 0px;
+}
+
+
+.activity-details__content{
+	padding: 35px 0;
+	p{
+		margin-bottom: 30px;
+	}
+	img{
+		margin-left: 45px;
+	}
+	blockquote{
+		margin-top: 50px;
+		margin-bottom: 40px;
+	}
+	h1, h2, h3, h4, h5, h6{
+		font-weight: 700;
+		font-family: $heading-font-bolditalic;
+	}
+	h4{
+		font-size: 24px;
+	}
+	ul{
+		display: inline-block;
+		list-style: none;
+		padding-left: 0;
+		li{
+			position: relative;
+			padding-left: 20px;
+			font-weight: 500;
+			display: inline-block;
+			padding-right: 47px;
+			font-size: 16px;
+			line-height: 32px;
+			color: #747474;
+			&:before{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -18px;
+				content: "\f101 ";
+				font-family: fontAwesome;
+			}
+		}
+	}
+}
+
+.activity-details__review{
+	padding: 50px 85px 20px 85px;
+	background: url(images/bg/bg-pattern-2.jpg) repeat scroll 0 0;
+	margin-top: 60px;
+	margin-bottom: 80px;
+	h3{
+		font-size: 26px;
+		color: #303030;
+		font-family: $heading-font-bolditalic;
+		font-weight: 700;
+		font-style: italic;
+	}
+	p{
+		font-size: 15px;
+		line-height: 28px;
+	}
+	.reviews{
+		@include flexbox();
+		@include justify-content(space-between);
+		@include flex-wrap(wrap);
+		margin-top: 20px;
+	}
+	.single-review{
+		border: none;
+		padding: 0;
+		padding-right: 30px;
+		padding-bottom: 30px;
+		@include flexbox();
+		@include align-items(center);
+		&:last-child{
+			padding-bottom: 0;
+		}
+	}
+	.single-review__thumb{
+		.hexagon{
+			height: 95px;
+			width: 84px;
+			.hexagon__inner2{
+				position: relative;
+				&:before{
+					content: "";
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					top: 0;
+					left: 0;
+					background: url(images/others-png/commenter-thumb-border.png) no-repeat scroll center center;
+				}
+			}
+		}
+	}
+	.signle-review__content{
+		padding-left: 25px;
+		@include flex-shrink(100);
+		p{
+			font-style: italic;
+			line-height: 24px;
+			margin-bottom: 10px;
+			&:before{
+				content: "\"";
+			}
+			&:after{
+				content: "\"";
+			}
+		}
+		h5{
+			font-size: 18px;
+			font-family: $heading-font-bolditalic;
+			font-weight: 700;
+			color: #4b4b4b;
+			margin-bottom: 2px;
+		}
+	}
+}
+
+.activity-details__footer{
+	border-top: 1px solid $border-color-light;
+	margin-top: 50px;
+}
+
+
+
+@media #{$lg-layout}{
+	.activity-details{
+		padding-right: 0;
+	}
+}
+
+@media #{$md-layout}{
+	.activity-details{
+		padding-right: 0;
+	}
+}
+
+@media #{$sm-layout}{
+	.activity-details{
+		padding-right: 0;
+	}
+	.activity-details__content img{
+		float: none !important;
+		margin-left: 0;
+	}
+
+	.activity-details__footer{
+		margin-top: 30px;
+	}
+
+	.activity-details__review{
+		padding: 35px;
+		.single-review{
+			@include flexbox();
+			@include flex-wrap(wrap);
+		}
+		.signle-review__content{
+			padding-top: 10px;
+			padding-left: 0;
+		}
+	}
+}	
+
+
+@media #{$xs-layout}{
+	.activity-details__review{
+		padding: 30px;
+		.single-review{
+			@include flexbox();
+			@include flex-wrap(wrap);
+		}
+		.signle-review__content{
+			padding-top: 10px;
+			padding-left: 0;
+		}
+	}
+
+	.activity-details__content{
+		blockquote{
+			margin-top: 50px;
+			margin-bottom: 0px;
+		}
+	}
+}	

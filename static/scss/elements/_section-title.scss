@@ -1,0 +1,71 @@
+@import "../variables";
+@import "../mixins";
+/*======= Section Title Styles =======*/
+
+.section-title{
+	padding: 0 40px;
+	h4{
+		font-size: 22px;
+		color: #585858;
+		font-weight: 700;
+		font-family: $heading-font-bolditalic;
+		margin-bottom: 5px;
+		margin-top: -3px;
+	}
+	h2{
+		font-size: 36px;
+		line-height: 40px;
+		color: #303030;
+		font-weight: 700;
+		font-family: $heading-font-bolditalic;
+	}
+	p{
+		color: #747474;
+		margin-bottom: 0;
+		margin-bottom: 50px;
+		span{
+			font-weight: 500;
+		}
+	}
+
+	// Section Title White
+	&.section-title--white{
+		h4{
+			color: #fff;
+		}
+		h2{
+			color: #fff;
+		}
+		p{
+			color: #fff;
+		}
+	}
+
+}
+
+
+.small-title{
+	h4{
+		margin-top: -4px;
+		font-size: 26px;
+	    font-weight: 700;
+	    font-style: italic;
+	    color: #303030;
+	    font-family: $heading-font-bolditalic;
+	}
+	p{
+		color: #606060;
+		font-size: 15px;
+		line-height: 26px;
+	}
+}
+
+@media #{$sm-layout}{
+	.section-title{
+		h2{
+			font-size: 32px;
+			line-height: 36px;
+		}
+		padding: 0;
+	}
+}

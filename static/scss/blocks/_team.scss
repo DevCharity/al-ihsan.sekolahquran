@@ -1,0 +1,74 @@
+@import "../variables";
+@import "../mixins";
+/*======= Team Styles =======*/
+
+.team-member{
+	background: #fafafa;
+	text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+	padding: 25px;
+    padding-bottom: 20px;
+}
+.team-member__thumb{
+    img{
+        width: 100%;
+        @include transform(scale(1) rotate(0deg));
+        @include transition(all 0.3s ease-in-out 0s);
+	}
+}
+.team-member__content{
+    padding-top: 8px;
+    h3{
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 700;
+        font-family: $heading-font-bolditalic;
+        margin-bottom: 0;
+    }
+    h5{
+        font-size: 16px;
+        color: #9d9d9d;
+        font-family: $body-font;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: 0;
+    }
+}
+.team-member:hover{
+    .team-member__thumb{
+        img{
+            @include transform(scale(1.2) rotate(3deg));
+        }
+    }
+}
+
+
+// Hexagon Shape
+.hexagon{
+    width: 218px;
+    height: 254px;
+    overflow: hidden;
+    visibility: hidden;
+    transform: rotate(120deg);
+    display: inline-block;
+    list-style-type: none;
+    .hexagon__inner1{
+    	display: block;
+    	overflow: hidden;
+    	width: 100%;
+    	height: 100%;
+    	transform: rotate(-60deg);
+    	text-decoration: none;
+    	.hexagon__inner2{
+    		display: block;
+    		width: 100%;
+    		height: 100%;
+    		overflow: hidden;
+    		visibility: visible;
+    		color: #fff;
+    		text-shadow: 1px 1px #000;
+    		transform: rotate(-60deg);
+    	}
+    }
+}

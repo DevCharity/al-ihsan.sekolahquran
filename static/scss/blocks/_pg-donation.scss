@@ -1,0 +1,175 @@
+@import "../variables";
+@import "../mixins";
+/*======= Donation Page Styles =======*/
+
+#pg-donation{
+
+}
+
+.pg-dontation__title{
+	font-size: 24px;
+	line-height: 34px;
+	font-family: $heading-font-bolditalic;
+	font-style: italic;
+	font-weight: 700;
+	color: #303030;
+	position: relative;
+	display: inline-block;
+	&:after{
+		content: "";
+		left: 0;
+		bottom: 0;
+		height: 2.5px;
+		background: #303030;
+		width: 100%;
+		position: absolute;
+	}
+}
+.pg-donation__personalinfo{
+	margin-right: 18px;
+}
+.pg-donation__bankinfo{
+	margin-left: 18px;
+}
+.pg-donation__personalinfo, .pg-donation__bankinfo{
+	padding: 70px;
+	background: #fafafa;
+}
+.pg-donation{
+	input:not([type="radio"]), select{
+		background: transparent;
+		border: 1px solid #ebebeb;
+		padding: 0 20px;
+		height: 45px;
+		line-height: 45px;
+	}
+	input[type="number"]{
+		padding-right: 0;
+	}
+	input + input{
+		margin-top: 15px;
+	}
+	label{
+		font-size: 16px;
+		color: #606060;
+	}
+	select {
+		background: rgba(0, 0, 0, 0) url("images/icons/select-arrow-down-2.png") no-repeat scroll right 5px center;
+		@include appearance(none);
+		color: #aaa;
+	}
+	.single-input{
+		margin-top: 25px;
+		p{
+			display: inline-block;
+			margin-bottom: 0;
+		}
+
+		&.donation-type{
+			margin-top: 66px;
+			@include flexbox();
+			@include flex-wrap(wrap);
+			p{
+				margin-right: 12px;
+			}
+		}
+
+		&.payment-cards{
+			p{
+				margin-right: 25px;
+			}
+			h6{
+				margin-left: 0;
+				margin-top: 0;
+				display: block;
+				font-size: 16px;
+				font-family: $body-font;
+				font-weight: 400;
+				color: #606060;
+				font-style: normal;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	button{
+		background: transparent;
+		font-weight: 500;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #303030;
+		height: 45px;
+		line-height: 47px;
+		padding: 0 25px;
+		border: 1px solid #ebebeb;
+		@include transition(all 0.4s ease-in-out 0s);
+		&:hover{
+			color: #fff;
+			border-color: $theme-color;
+			background: $theme-color;
+		}
+		&:focus, &:active{
+			outline: none;
+		}
+	}
+}
+
+
+
+@media #{$lg-layout}{
+	.pg-donation__personalinfo{
+		margin-right: 0;
+	}
+	.pg-donation__bankinfo{
+		margin-left: 0;
+	}
+	.pg-donation__personalinfo, .pg-donation__bankinfo{
+		padding: 30px;
+	}
+}
+
+@media #{$md-layout}{
+	.pg-donation__personalinfo{
+		margin-right: 0;
+	}
+	.pg-donation__bankinfo{
+		margin-left: 0;
+	}
+	.pg-donation__personalinfo, .pg-donation__bankinfo{
+		padding: 50px;
+	}
+	.pg-donation__bankinfo{
+		margin-top: 50px;
+	}
+}
+
+@media #{$sm-layout}{
+	.pg-donation__personalinfo{
+		margin-right: 0;
+	}
+	.pg-donation__bankinfo{
+		margin-left: 0;
+	}
+	.pg-donation__personalinfo, .pg-donation__bankinfo{
+		padding: 50px;
+	}
+	.pg-donation__bankinfo{
+		margin-top: 50px;
+	}
+	.pg-donation{
+		.single-input{
+			&.donation-type{
+				margin-top: 25px;
+			}
+			select[name="pg-donation-country"]{
+				margin-top: 15px;
+			}
+		}
+	} 
+
+}
+
+@media #{$xs-layout}{
+	.pg-donation__personalinfo, .pg-donation__bankinfo{
+		padding: 30px;
+	}
+}

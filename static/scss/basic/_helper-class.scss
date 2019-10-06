@@ -1,0 +1,888 @@
+@import "../variables";
+@import "../mixins";
+/*======= Helper Class =======*/
+
+.hidden {
+	display: none;
+}
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+.invisible {
+	visibility: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+.clearfix:after {
+	clear: both;
+}
+.mark{
+	background: transparent;
+	font-weight: 500;
+	color: #414141;
+	padding: 0;
+}
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
+
+// Color
+.color--theme{
+	color: $theme-color;
+}
+.color--light{
+	color: #999999;
+}
+.color--dark{
+	color: #333333;
+}
+.color--black{
+	color: #000000;
+}
+.color--white{
+	color: #ffffff;
+}
+
+// Background
+.bg--theme{
+	background: $theme-color;
+}
+.bg--light{
+	background: #999999;
+}
+.bg--dark{
+	background: #212121;
+}
+.bg--dark--light{
+	background: #282828;
+}
+.bg--black{
+	background: #000000;
+}
+.bg--white{
+	background: #ffffff;
+}
+.bg--grey-light{
+	background: #f3f3f3;
+}
+.bg--pattern{
+	background-color: #ffffff;
+	background: url(images/bg/bg-pattern.jpg) repeat scroll;
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		@include transform(translateY(-50%));
+	}
+}
+
+// Background Image
+@for $i from 1 through 20{
+	.bg-image--#{$i}{
+		background-image: url(images/bg/#{$i}.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+}
+
+.half--bg{
+	position: relative;
+	z-index: 1;
+	&:before{
+		content: "";
+		height: 50%;
+		width: 100%;
+		background: #000;
+		left: 0;
+		top: 0;
+		position: absolute;
+		opacity: 0.5;
+	}
+	&:after{
+		content: "";
+		height: 50%;
+		width: 100%;
+		background: #fff;
+		left: 0;
+		bottom: 0;
+		position: absolute;
+	}
+
+	& > div{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+
+
+// Font weights
+.fw--900{
+	font-weight: 900;
+}
+.fw--700{
+	font-weight: 700;
+}
+.fw--600{
+	font-weight: 600;
+}
+.fw--500{
+	font-weight: 500;
+}
+.fw--400{
+	font-weight: 400;
+}
+.fw--300{
+	font-weight: 300;
+}
+
+// Text specialized
+.text--italic{
+	font-style: italic;
+}
+.text--normal{
+	font-style: normal;
+}
+.text--underline{
+	font-style: underline;
+}
+
+// Font specialized
+.body--font{
+	font-family: $body-font;
+}
+.heading--font{
+	font-family: $heading-font;
+}
+
+// Height and width
+.fullscreen{
+	min-height: 100vh;
+	width: 100%;
+}
+.w--100{
+	width: 100%;
+}
+.w--75{
+	width: 75%;
+}
+.w--50{
+	width: 50%;
+}
+.w--33{
+	width: 33.33%;
+}
+.w--25{
+	width: 25%;
+}
+.w--10{
+	width: 10%;
+}
+
+.h--100{
+	height: 100%;
+}
+.h--75{
+	height: 75%;
+}
+.h--50{
+	height: 50%;
+}
+.h--25{
+	height:25%;
+}
+.h--33{
+	height:33.33%;
+}
+.h--10{
+	height:10%;
+}
+
+
+
+
+// Border Define
+.cr-border{
+	border-color: $border-color;
+	border-style: solid;
+	border-width: 1px;
+
+	// Border position
+	&.cr-border--tb{
+		border-width: 1px 0 1px 0;
+	}
+
+	&.cr-border--lr{
+		border-width: 0 1px 0 1px;
+	}
+
+	&.cr-border--l{
+		border-width: 0 0 0 1px;
+	}
+
+	&.cr-border--r{
+		border-width: 0 1px 0 0;
+	}
+
+	&.cr-border--t{
+		border-width: 1px 0 0 0;
+	}
+
+	&.cr-border--b{
+		border-width: 0 0 1px 0;
+	}
+
+	// Border size
+	&.cr-border--bold{
+		border-width: 2px;
+		&.cr-border--tb{
+			border-width: 2px 0 2px 0;
+		}
+
+		&.cr-border--lr{
+			border-width: 0 2px 0 2px;
+		}
+
+		&.cr-border--l{
+			border-width: 0 0 0 2px;
+		}
+
+		&.cr-border--r{
+			border-width: 0 2px 0 0;
+		}
+
+		&.cr-border--t{
+			border-width: 2px 0 0 0;
+		}
+
+		&.cr-border--b{
+			border-width: 0 0 2px 0;
+		}
+	}
+
+	
+	// Border color
+	&.cr-border--light{
+		border-color: $border-color-light;
+	}
+
+	&.cr-border--dark{
+		border-color: $border-color-dark;
+	}
+
+	&.cr-border--theme{
+		border-color: $theme-color;
+	}
+
+}
+
+
+// Define Round
+.cr-round{
+	border-radius: $theme-radius;
+	&.cr-round--full{
+		border-radius: 100%;
+	}
+	&.cr-round--lg{
+		border-radius: 100px;
+	}
+	&.cr-round--md{
+		border-radius: 7px;
+	}
+	&.cr-round--sm{
+		border-radius: 5px;
+	}
+	&.cr-round--xs{
+		border-radius: 3px;
+	}
+}
+
+
+
+
+.hidden{
+	display: none;
+}
+@media #{$sp-layout}{
+	.hidden-sp{
+		display: none;
+	}
+}
+@media #{$xx-layout}{
+	.hidden-xx{
+		display: none;
+	}
+}
+@media #{$xlg-layout}{
+	.hidden-xlg{
+		display: none;
+	}
+}
+@media #{$lg-layout}{
+	.hidden-lg{
+		display: none;
+	}
+}
+@media #{$md-layout}{
+	.hidden-md{
+		display: none;
+	}
+}
+@media #{$sm-layout}{
+	.hidden-sm{
+		display: none;
+	}
+}
+@media #{$xs-layout}{
+	.hidden-xs{
+		display: none;
+	}
+}
+
+
+
+// Text aligns
+@media #{$sp-layout}{
+	.text-sp-center{
+		text-align: center;
+	}
+	.text-sp-left{
+		text-align: left;
+	}
+	.text-sp-right{
+		text-align: right;
+	}
+}
+@media #{$xx-layout}{
+	.text-xx-center{
+		text-align: center;
+	}
+	.text-xx-left{
+		text-align: left;
+	}
+	.text-xx-right{
+		text-align: right;
+	}
+}
+@media #{$xlg-layout}{
+	.text-xlg-center{
+		text-align: center;
+	}
+	.text-xlg-left{
+		text-align: left;
+	}
+	.text-xlg-right{
+		text-align: right;
+	}
+}
+@media #{$lg-layout}{
+	.text-lg-center{
+		text-align: center;
+	}
+	.text-lg-left{
+		text-align: left;
+	}
+	.text-lg-right{
+		text-align: right;
+	}
+}
+@media #{$md-layout}{
+	.text-md-center{
+		text-align: center;
+	}
+	.text-md-left{
+		text-align: left;
+	}
+	.text-md-right{
+		text-align: right;
+	}
+}
+
+@media #{$sm-layout}{
+	.text-sm-center{
+		text-align: center;
+	}
+	.text-sm-left{
+		text-align: left;
+	}
+	.text-sm-right{
+		text-align: right;
+	}
+}
+
+@media #{$xs-layout}{
+	.text-xs-center{
+		text-align: center;
+	}
+	.text-xs-left{
+		text-align: left;
+	}
+	.text-xs-right{
+		text-align: right;
+	}
+}
+
+
+a#scrollUp {
+    background: #ffffff;
+    color: #303030;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 100px;
+    height: 45px;
+    width: 45px;
+    font-size: 25px;
+    text-align: center;
+    padding: 9px 0;
+    box-shadow: 0 0 15px 0px rgba(50,50,50,0.2);
+    &:hover{
+    	background: $theme-color;
+    	color: #fff;
+    }
+}
+
+
+
+.form-message{
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 0;
+	&.error{
+		color: red;
+	}
+	&.success{
+		color: green;
+	}
+}
+
+
+
+
+
+// Overlay styles
+[data-overlay], [data-black-overlay]{
+	position: relative;
+}
+[data-overlay] > div, [data-overlay] > *, [data-black-overlay] > div, [data-black-overlay] > *{
+	position: relative;
+	z-index: 2;
+}
+[data-overlay]:before, [data-black-overlay]:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+[data-overlay]:before{
+	background-color: $theme-color;
+}
+[data-black-overlay]:before{
+	background-color: #000000;
+}
+@for $i from 1 through 10{
+	[data-overlay="#{$i}"]:before, [data-black-overlay="#{$i}"]:before{
+		opacity: #{$i * 0.10};
+	}
+}
+
+
+
+
+.flower--left-top{
+	overflow: hidden;
+	position: relative;
+	&:before{
+		position: absolute;
+		content: "";
+		left: 0;
+		top: 0;
+		height: 400px;
+		width: 400px;
+		background: url(images/others-png/flower.png) no-repeat scroll center center;
+		background-size: cover; 
+		z-index: 1;
+		@include transform(translate(-40%, -35%));
+	}
+
+	& > *{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.flower--right-bottom{
+	overflow: hidden;
+	position: relative;
+	&:after{
+		position: absolute;
+		content: "";
+		right: 0;
+		bottom: 0;
+		height: 400px;
+		width: 400px;
+		background: url(images/others-png/flower.png) no-repeat scroll center center;
+		background-size: cover; 
+		z-index: 1;
+		@include transform(translate(40%, 35%));
+	}
+
+	& > *{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.flower--left-bottom{
+	overflow: hidden;
+	position: relative;
+	&:before{
+		position: absolute;
+		content: "";
+		left: 0;
+		bottom: 0;
+		height: 400px;
+		width: 400px;
+		background: url(images/others-png/flower.png) no-repeat scroll center center;
+		background-size: cover; 
+		z-index: 1;
+		@include transform(translate(-40%, 35%));
+	}
+
+	& > *{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+
+.flower--right-top{
+	overflow: hidden;
+	position: relative;
+	&:after{
+		position: absolute;
+		content: "";
+		right: 0;
+		top: 0;
+		height: 400px;
+		width: 400px;
+		background: url(images/others-png/flower.png) no-repeat scroll center center;
+		background-size: cover; 
+		z-index: 1;
+		@include transform(translate(40%, -35%));
+	}
+
+	& > *{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.zig-zag--top{
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 15px;
+		height: 30px;
+		width: 100%;
+		background: url(images/icons/zigzag-top.png) repeat-x scroll 0 0;
+		z-index: 1;
+	}
+}
+.zig-zag--bottom{
+	position: relative;
+	&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 30px;
+		width: 100%;
+		background: url(images/icons/zigzag-bottom.png) repeat-x scroll 0 0;
+		z-index: 1;
+	}
+}
+
+
+
+
+
+
+.slick-active, .slick-current, .slick-slide{
+	&:focus, &:active{
+		outline: none !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+// Define Padding margin
+.ptb--150{
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+.pt--150{
+	padding-top: 150px;
+}
+.pb--150{
+	padding-bottom: 150px;
+}
+.ptb--140{
+	padding-top: 140px;
+	padding-bottom: 140px;
+}
+.pt--140{
+	padding: 140px;
+}
+.pb--140{
+	padding-bottom: 140px;
+}
+.ptb--130{
+	padding-top: 130px;
+	padding-bottom: 130px;
+}
+.pt--130{
+	padding-top: 130px;
+}
+.pb--130{
+	padding-bottom: 130px;
+}
+.ptb--120{
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+.pt--120{
+	padding-top: 120px;
+}
+.pb--120{
+	padding-bottom: 120px;
+}
+.ptb--100{
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.pt--100{
+	padding-top: 100px;
+}
+.pb--100{
+	padding-bottom: 100px;
+}
+.ptb--90{
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+.pt--90{
+	padding-top: 90px;
+}
+.pb--90{
+	padding-bottom: 90px;
+}
+.ptb--20{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.ptb--70{
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.mt--40{
+	margin-top: 40px;
+}
+.pt--60{
+	padding-top: 60px;
+}
+.mb--20{
+	margin-bottom: 20px;
+}
+
+
+
+@media #{$md-layout}{
+	.ptb--150{
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	.pt--150{
+		padding-top: 120px;
+	}
+	.pb--150{
+		padding-bottom: 120px;
+	}
+	.ptb--140{
+		padding-top: 110px;
+		padding-bottom: 110px;
+	}
+	.pt--140{
+		padding: 110px;
+	}
+	.pb--140{
+		padding-bottom: 110px;
+	}
+	.ptb--130{
+		padding-top: 105px;
+		padding-bottom: 105px;
+	}
+	.pt--130{
+		padding-top: 105px;
+	}
+	.pb--130{
+		padding-bottom: 105px;
+	}
+	.ptb--120{
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.pt--120{
+		padding-top: 100px;
+	}
+	.pb--120{
+		padding-bottom: 100px;
+	}
+	.ptb--100{
+		padding-top: 85px;
+		padding-bottom: 85px;
+	}
+	.pt--100{
+		padding-top: 85px;
+	}
+	.pb--100{
+		padding-bottom: 85px;
+	}
+	.ptb--90{
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	.pt--90{
+		padding-top: 80px;
+	}
+	.pb--90{
+		padding-bottom: 80px;
+	}
+}
+
+
+
+
+@media #{$sm-layout}{
+	.ptb--150{
+		padding-top: 85px;
+		padding-bottom: 85px;
+	}
+	.pt--150{
+		padding-top: 85px;
+	}
+	.pb--150{
+		padding-bottom: 85px;
+	}
+	.ptb--140{
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
+	.pt--140{
+		padding: 75px;
+	}
+	.pb--140{
+		padding-bottom: 75px;
+	}
+	.ptb--130{
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	.pt--130{
+		padding-top: 70px;
+	}
+	.pb--130{
+		padding-bottom: 70px;
+	}
+	.ptb--120{
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	.pt--120{
+		padding-top: 60px;
+	}
+	.pb--120{
+		padding-bottom: 60px;
+	}
+	.ptb--100{
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.pt--100{
+		padding-top: 50px;
+	}
+	.pb--100{
+		padding-bottom: 50px;
+	}
+	.ptb--90{
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.pt--90{
+		padding-top: 50px;
+	}
+	.pb--90{
+		padding-bottom: 50px;
+	}
+}
+
+
+
+/* Boxed Layout */
+.wrapper.boxed--layout{
+	overflow-x: hidden;
+	position: relative;
+	margin-left: 100px;
+	margin-right: 100px;
+	@include box-shadow(0 0 30px rgba(0,0,0,0.2));
+	@media #{$xlg-layout}{
+		margin-left: 60px;
+		margin-right: 60px;
+	}
+	@media #{$lg-layout}{
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	@media #{$md-layout}{
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	@media #{$sm-layout}{
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
