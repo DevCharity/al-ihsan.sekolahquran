@@ -24,7 +24,7 @@
 							<!-- Single Widgets -->
 							<div class="single-widget widget--details">
 								<div class="logo">
-									<a href="index.html">
+									<a href=".">
 										<img src="images/logo/logo-dark.png" alt="footer logo">
 									</a>
 								</div>
