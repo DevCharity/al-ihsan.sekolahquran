@@ -102,16 +102,8 @@
 							</li>
 						</ul>
 					</div><!-- Single Widget (Recentpost) -->
-
-					<!-- Single Widget (Advertisement) -->
-					<div class="single-widget wgt-advertisement">
-						<a href="."><img src="images/others-jpg/sidebar-advertisement.jpg" alt="sidebar advertisement"></a>
-					</div><!-- //Single Widget (Advertisement) -->
-
-
 				</div><!-- //Sidebar Widgets  -->
 			</div><!-- //Sidebar Widgets Area -->
-
 		</div>
 	</div>
 </section><!-- //Event Details Area -->
